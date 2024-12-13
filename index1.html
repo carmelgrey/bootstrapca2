@@ -1,0 +1,717 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-icons/1.10.0/font/bootstrap-icons.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyChlra_vyPH8HVBlOUumVKS7M2MreOuJic&callback=initMap" async defer></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="css/style.css">
+    <title>Carmel CV</title>
+</head>
+<body>
+   <!-- Navbar -->
+<nav class="navbar navbar-expand-lg navbar-dark fixed-top">
+    <div class="container">
+        <a class="navbar-brand fs-4" href="#">Carmel Grey</a>
+        <button class="navbar-toggler shadow-none border-0" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="sidebar offcanvas offcanvas-start" id="offcanvasNavbar">
+            <div class="offcanvas-header text-white border-bottom">
+                <h5 class="offcanvas-title">Topics</h5>
+                <button type="button" class="btn-close btn-close-white shadow-none" data-bs-dismiss="offcanvas"></button>
+            </div>
+            <div class="offcanvas-body">
+                <ul class="navbar-nav justify-content-center align-items-center fs-6">
+                    <li class="nav-item">
+                        <a class="nav-link active" href="#about"><i class="bi bi-person-workspace"></i> About Me</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#education"><i class="bi bi-mortarboard"></i> Education</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#grades"><i class="bi bi-bar-chart"></i> Grades</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#employment"><i class="bi bi-laptop"></i> Employment</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#skills"><i class="bi bi-card-checklist"></i> Skills</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#projects"><i class="bi bi-book"></i> Projects</a>
+                    </li>
+                </ul>
+                <div class="d-flex flex-lg-row flex-column align-items-center gap-3">
+                    <a href="#contact" class="btn btn-custom"><i class="bi bi-telephone"></i> Contact Me</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Search Bar in Navbar -->
+    <form class="d-flex ms-auto" onsubmit="searchPage(event)">
+        <input class="form-control me-2" type="search" id="searchInput" placeholder="Search" aria-label="Search">
+        <button class="btn btn-outline-light" type="submit">Search</button>
+    </form>
+</nav>
+
+    <main id="scrollspyMain" data-bs-spy="scroll" data-bs-target=".sidebar" data-bs-smooth-scroll="true" data-bs-offset="0" tabindex="0">
+        <section id="about" class="vh-100 d-flex justify-content-center align-items-center" style="padding-top: 80px;">
+            <div class="card text-white bg-transparent border-0" style="width: 80%; max-width: 1200px;">
+                <!-- carousel -->
+                <div id="carouselExample" class="carousel slide card-img-top" style="border-radius: 15px;" data-bs-ride="carousel">
+                    <div class="carousel-indicators">
+                        <button type="button" data-bs-target="#carouselExample" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+                        <button type="button" data-bs-target="#carouselExample" data-bs-slide-to="1" aria-label="Slide 2"></button>
+                        <button type="button" data-bs-target="#carouselExample" data-bs-slide-to="2" aria-label="Slide 3"></button>
+                    </div>
+                    <div class="carousel-inner" style="height: 60vh; border-radius: 15px; overflow: hidden;">
+                        <!-- first slide -->
+                        <div class="carousel-item active">
+                            <img src="./img/me.png" class="d-block w-100" alt="Slide 1" style="width: 100%; height: 100%; object-fit: cover;
+">
+                        </div>
+                        <!-- second slide -->
+                        <div class="carousel-item">
+                            <img src="./img/cvpic.jpg" class="d-block w-100" alt="Slide 2" style="width: 100%; height: auto; max-height: 100%;">
+                        </div>
+                        <!-- Third slide -->
+                        <div class="carousel-item">
+                            <img src="./img/ncad.png" class="d-block w-100" alt="Slide 3" style="width: 100%; height: auto; max-height: 100%;">
+                        </div>
+                    </div>
+                    <!-- carousel controls -->
+                    <button class="carousel-control-prev" type="button" data-bs-target="#carouselExample" data-bs-slide="prev">
+                        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                        <span class="visually-hidden">Previous</span>
+                    </button>
+                    <button class="carousel-control-next" type="button" data-bs-target="#carouselExample" data-bs-slide="next">
+                        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                        <span class="visually-hidden">Next</span>
+                    </button>
+                </div>
+                <div class="card-body text-center">
+                    <h1 style="color: #000000;">Carmel Grey</h1>
+                    <h2>CV</h2>
+                </div>
+            </div>
+        </section>
+    </main>
+
+        <!-- Education -->
+<section id="education" class="d-flex flex-column justify-content-center align-items-center py-5">
+    <h1 class="mb-4">Education</h1>
+    <div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 g-4">
+        <!-- card 1 -->
+        <div class="col">
+            <div class="card h-100">
+                <a href="https://www.tudublin.ie/" target="_blank">
+                    <img src="./img/tud.png" class="card-img-top" alt="TU Dublin Logo">
+                </a>
+                <div class="card-body">
+                    <h5 class="card-title">Computing with Software Development</h5>
+                    <p class="card-text">This is a wider card with supporting text below.</p>
+                    <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#modal1">
+                        More Details
+                    </button>
+                </div>
+                <div class="card-footer">
+                    <small class="text-body-secondary">2021 - 2025</small>
+                </div>
+            </div>
+        </div>
+        <!-- modal 1 -->
+<div class="modal fade" id="modal1" tabindex="-1" aria-labelledby="modal1Label" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title text-body-secondary" id="modal1Label">Computing with Software Development</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <p class="text-body-secondary">
+                    This is where I studied for my degree in Computing with Software Development.
+                </p>
+                <!-- map container -->
+                <div id="map1" style="height: 400px; width: 100%;"></div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+        <!-- card 2 -->
+        <div class="col">
+            <div class="card h-100">
+                <a href="https://www.ncad.ie/" target="_blank">
+                    <img src="./img/ncad.png" class="card-img-top" alt="NCAD Logo">
+                </a>
+                <div class="card-body">
+                    <h5 class="card-title">Textiles</h5>
+                    <p class="card-text">Explored various design principles and foundational art techniques.</p>
+                    <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#modal2">
+                        More Details
+                    </button>
+                </div>
+                <div class="card-footer">
+                    <small class="text-body-secondary">2016 - 2019</small>
+                </div>
+            </div>
+        </div>
+        
+        <!-- modal 2 -->
+        <div class="modal fade" id="modal2" tabindex="-1" aria-labelledby="modal2Label" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title text-body-secondary" id="modal2Label">Textile Fine Art</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        <p class="text-body-secondary">Hello, this is my information about NCAD.</p>
+                        <div id="map2" style="height: 400px;"></div> 
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- card 3 -->
+        <div class="col">
+            <div class="card h-100">
+                <a href="https://www.stratfordcollege.ie/" target="_blank">
+                    <img src="./img/stratford.png" class="card-img-top" alt="Stratford College Logo">
+                </a>
+                <div class="card-body">
+                    <h5 class="card-title">Secondary Education</h5>
+                    <p class="card-text">Completed Leaving Certificate with a focus on STEM subjects.</p>
+                    <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#modal3">
+                        More Details
+                    </button>
+                </div>
+                <div class="card-footer">
+                    <small class="text-body-secondary">2010 - 2016</small>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- modal 3 -->
+<div class="modal fade" id="modal3" tabindex="-1" aria-labelledby="modal3Label" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title text-body-secondary" id="modal3Label">Leaving Cert</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <p class="text-body-secondary">Hello, this is my information about Stratford College.</p>
+                <div id="map3" style="height: 400px; width: 100%;"></div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+      <!-- button to see grades -->
+     <br>
+     <br>
+    <a href="#grades" class="btn btn-primary mt-4"><i class="bi bi-bar-chart"></i> Click to see my grades</a>
+</section>
+
+<!-- grades -->
+<section id="grades" class="vh-100 d-flex flex-column justify-content-center align-items-center">
+    <h1 class="mb-4">My Grades</h1>
+    <h5>Current GPA: 3.40</h5>
+    <!-- year tabs -->
+    <ul class="nav nav-tabs mb-3" id="yearTabs" role="tablist">
+        <li class="nav-item" role="presentation">
+            <a class="nav-link active" id="year1-tab" data-bs-toggle="tab" href="#year-1" role="tab" aria-controls="year-1" aria-selected="true">1st Year</a>
+        </li>
+        <li class="nav-item" role="presentation">
+            <a class="nav-link" id="year2-tab" data-bs-toggle="tab" href="#year-2" role="tab" aria-controls="year-2" aria-selected="false">2nd Year</a>
+        </li>
+        <li class="nav-item" role="presentation">
+            <a class="nav-link" id="year3-tab" data-bs-toggle="tab" href="#year-3" role="tab" aria-controls="year-3" aria-selected="false">3rd Year</a>
+        </li>
+        <li class="nav-item" role="presentation">
+            <a class="nav-link" id="year4-tab" data-bs-toggle="tab" href="#year-4" role="tab" aria-controls="year-4" aria-selected="false">4th Year</a>
+        </li>
+    </ul>
+
+    
+    <div class="tab-content" id="yearTabsContent">
+        <div id="year-1" class="tab-pane fade show active" role="tabpanel" aria-labelledby="year1-tab">
+            <h3>1st Year</h3>
+            <div class="accordion" id="accordionYear1">
+                <!-- semester 1 -->
+                <div class="accordion-item">
+                    <h2 class="accordion-header" id="heading1">
+                        <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse1" aria-expanded="true" aria-controls="collapse1">
+                            Semester 1
+                        </button>
+                    </h2>
+                    <div id="collapse1" class="accordion-collapse collapse show" aria-labelledby="heading1" data-bs-parent="#accordionYear1">
+                        <div class="accordion-body">
+                            <ul>
+                                <li>Critical Skills Development - <strong>A</strong></li>
+                                <li>Discrete Maths - <strong>A</strong></li>
+                                <li>Business & Information Systems - <strong>B+</strong></li>
+                                <li>Visual Design & User Experience - <strong>B+</strong></li>
+                                <li>Computer Architecture - <strong>A</strong></li>
+                                <li>Software Development 1 - <strong>A</strong></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- semester 2 -->
+                <div class="accordion-item">
+                    <h2 class="accordion-header" id="heading2">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse2" aria-expanded="false" aria-controls="collapse2">
+                            Semester 2
+                        </button>
+                    </h2>
+                    <div id="collapse2" class="accordion-collapse collapse" aria-labelledby="heading2" data-bs-parent="#accordionYear1">
+                        <div class="accordion-body">
+                            <ul>
+                                <li>Operating System Fundamentals - <strong>B+</strong></li>
+                                <li>Statistics - <strong>A</strong></li>
+                                <li>Database Fundamentals - <strong>A</strong></li>
+                                <li>Social Media Communications - <strong>A</strong></li>
+                                <li>Systems Analysis - <strong>B+</strong></li>
+                                <li>Software Development 2 - <strong>A</strong></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <br>
+            <h5>1st Year GPA: 3.83</h5>
+        </div>
+
+        <div id="year-2" class="tab-pane fade" role="tabpanel" aria-labelledby="year2-tab">
+            <h3>2nd Year</h3>
+            <div class="accordion" id="accordionYear2">
+                <!-- semester 1 -->
+                <div class="accordion-item">
+                    <h2 class="accordion-header" id="heading3">
+                        <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse3" aria-expanded="true" aria-controls="collapse3">
+                            Semester 1
+                        </button>
+                    </h2>
+                    <div id="collapse3" class="accordion-collapse collapse show" aria-labelledby="heading3" data-bs-parent="#accordionYear2">
+                        <div class="accordion-body">
+                            <ul>
+                                <li>Client-side Web Development - <strong>B</strong></li>
+                                <li>Discrete Maths 2 - <strong>A</strong></li>
+                                <li>Advanced Database Technologies - <strong>B+</strong></li>
+                                <li>Network Fundamentals - <strong>A</strong></li>
+                                <li>Software Quality Assurance & Testing - <strong>B</strong></li>
+                                <li>Software Development 3 - <strong>A</strong></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- semester 2 -->
+                <div class="accordion-item">
+                    <h2 class="accordion-header" id="heading4">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse4" aria-expanded="false" aria-controls="collapse4">
+                            Semester 2
+                        </button>
+                    </h2>
+                    <div id="collapse4" class="accordion-collapse collapse" aria-labelledby="heading4" data-bs-parent="#accordionYear2">
+                        <div class="accordion-body">
+                            <ul>
+                                <li>Information Security - <strong>B</strong></li>
+                                <li>Database Administration & Analysis - <strong>B</strong></li>
+                                <li>Management Science - <strong>A</strong></li>
+                                <li>Routing & Switching Essentials - <strong>A</strong></li>
+                                <li>Project - <strong>B</strong></li>
+                                <li>Software Development 4 - <strong>B+</strong></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <br>
+            <h5>2nd Year GPA: 3.46</h5>
+        </div>
+
+        <div id="year-3" class="tab-pane fade" role="tabpanel" aria-labelledby="year3-tab">
+            <h3>3rd Year</h3>
+            <div class="accordion" id="accordionYear3">
+                <!-- semester 1 -->
+                <div class="accordion-item">
+                    <h2 class="accordion-header" id="heading5">
+                        <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse5" aria-expanded="true" aria-controls="collapse5">
+                            Semester 1
+                        </button>
+                    </h2>
+                    <div id="collapse5" class="accordion-collapse collapse show" aria-labelledby="heading5" data-bs-parent="#accordionYear3">
+                        <div class="accordion-body">
+                            <ul>
+                                <li>Data Analysis - <strong>A</strong></li>
+                                <li>Data Structures & Algorithms - <strong>B</strong></li>
+                                <li>Big Data Technologies - <strong>B-</strong></li>
+                                <li>Cloud Service & Distributed Computing - <strong>C</strong></li>
+                                <li>Operating Systems - <strong>B</strong></li>
+                                <li>Server-side Web Development - <strong>B-</strong></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- semester 2 -->
+                <div class="accordion-item">
+                    <h2 class="accordion-header" id="heading6">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse6" aria-expanded="false" aria-controls="collapse6">
+                            Semester 2
+                        </button>
+                    </h2>
+                    <div id="collapse6" class="accordion-collapse collapse" aria-labelledby="heading6" data-bs-parent="#accordionYear3">
+                        <div class="accordion-body">
+                            <ul>
+                                <li>Completed Work Experience</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <br>
+            <h5>3rd Year GPA: 2.92</h5>
+        </div>
+
+        <div id="year-4" class="tab-pane fade" role="tabpanel" aria-labelledby="year4-tab">
+            <h3>4th Year</h3>
+            <div class="accordion" id="accordionYear4">
+                <!-- semester 1 -->
+                <div class="accordion-item">
+                    <h2 class="accordion-header" id="heading7">
+                        <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapse7" aria-expanded="true" aria-controls="collapse7">
+                            Semester 1 (Current Semester)
+                        </button>
+                    </h2>
+                    <div id="collapse7" class="accordion-collapse collapse show" aria-labelledby="heading7" data-bs-parent="#accordionYear4">
+                        <div class="accordion-body">
+                            <ul>
+                                <li>Applied Machine Learning</li>
+                                <li>Information Systems</li>
+                                <li>Enterprise Performance Architecture</li>
+                                <li>Interactive Media Design</li>
+                                <li>Enterprise Applications Development</li>
+                                <li>Final Project</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <br>
+            <h5>Current GPA: 3.40</h5>
+        </div>
+    </div>
+</section>
+
+<!-- employment -->
+<section id="employment" class="timeline vh-100 d-flex flex-column justify-content-center align-items-center">
+    <div class="container">
+      <h2 class="text-center my-4">Employment History</h2>
+      <div class="timeline-container">
+        <!-- tommy hilfiger -->
+        <div class="timeline-entry left">
+          <div class="timeline-date left">
+            <p>Aug 2024 – Present</p>
+          </div>
+          <br>
+          <div class="timeline-content">
+            <h4>Tommy Hilfiger</h4>
+            <p><strong>Supervisor</strong></p>
+            <ul>
+              <li>Key holder – Responsible for opening and closing the store.</li>
+              <li>Financial – Motivating staff to achieve daily and seasonal targets.</li>
+              <li>Team Management – Assigning roles and managing daily staff activities.</li>
+              <li>Store organisation – Visual merchandising, stock verification, and online returns.</li>
+            </ul>
+          </div>
+        </div>
+  
+        <!-- colgate-palmolive -->
+        <div class="timeline-entry right">
+          <div class="timeline-date right">
+            <p>Jan 2024 – Aug 2024</p>
+          </div>
+          <br>
+          <div class="timeline-content">
+            <h4>Colgate-Palmolive</h4>
+            <p><strong>Software Developer Intern</strong></p>
+            <ul>
+              <li>Developer – Worked on time-critical tickets to update systems on the customer development team.</li>
+              <li>Event Management – Organized office events to raise money for Barnardo’s.</li>
+              <li>Team Player – Collaborated with office groups to foster a sense of community.</li>
+            </ul>
+          </div>
+        </div>
+  
+        <!-- tommy hilfiger -->
+        <div class="timeline-entry left">
+          <div class="timeline-date left">
+            <p>May 2018 – Dec 2023</p>
+          </div>
+          <br>
+          <div class="timeline-content">
+            <h4>Tommy Hilfiger</h4>
+            <p><strong>Full-time Supervisor</strong></p>
+            <ul>
+              <li>Key holder – Responsible for opening and closing the store.</li>
+              <li>Financial – Motivating staff to achieve financial daily and seasonal targets.</li>
+              <li>Team Management – Assigning roles and managing staff daily.</li>
+              <li>Store organisation – Visual merchandising, stock delivery verification, and online returns.</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  
+        <!-- skills  -->
+<section id="skills" class="vh-100 d-flex flex-column justify-content-center align-items-center">
+    <h1 class="mb-4">My Skills</h1>
+    
+    <ul class="nav nav-tabs" id="skillTabs" role="tablist">
+        <li class="nav-item" role="presentation">
+            <a class="nav-link active" id="tab1" data-bs-toggle="tab" href="#skills1" role="tab" aria-controls="skills1" aria-selected="true">Programming</a>
+        </li>
+        <li class="nav-item" role="presentation">
+            <a class="nav-link" id="tab2" data-bs-toggle="tab" href="#skills2" role="tab" aria-controls="skills2" aria-selected="false">Web Development</a>
+        </li>
+        <li class="nav-item" role="presentation">
+            <a class="nav-link" id="tab3" data-bs-toggle="tab" href="#skills3" role="tab" aria-controls="skills3" aria-selected="false">Database</a>
+        </li>
+        <li class="nav-item" role="presentation">
+            <a class="nav-link" id="tab4" data-bs-toggle="tab" href="#skills4" role="tab" aria-controls="skills4" aria-selected="false">Design</a>
+        </li>
+        <li class="nav-item" role="presentation">
+            <a class="nav-link" id="tab5" data-bs-toggle="tab" href="#skills5" role="tab" aria-controls="skills5" aria-selected="false">Tools & Frameworks</a>
+        </li>
+        <li class="nav-item" role="presentation">
+            <a class="nav-link" id="tab6" data-bs-toggle="tab" href="#skills6" role="tab" aria-controls="skills6" aria-selected="false">Soft Skills</a>
+        </li>
+    </ul>
+
+    <!-- tabs -->
+    <div class="tab-content" id="skillTabContent">
+        <!-- programming -->
+        <div class="tab-pane fade show active" id="skills1" role="tabpanel" aria-labelledby="tab1">
+            <ul>
+                <li><i class="fab fa-python"></i> Python</li>
+                <li><i class="fab fa-java"></i> Java</li>
+                <li><i class="fab fa-js"></i> JavaScript</li>
+                <li><i class="fab fa-java"></i> C#</li>
+                <li><i class="fab fa-ruby"></i> Ruby</li>
+            </ul>
+        </div>
+
+        <!-- web development -->
+        <div class="tab-pane fade" id="skills2" role="tabpanel" aria-labelledby="tab2">
+            <ul>
+                <li><i class="fab fa-html5"></i> HTML5</li>
+                <li><i class="fab fa-css3-alt"></i> CSS3</li>
+                <li><i class="fab fa-bootstrap"></i> Bootstrap</li>
+                <li><i class="fab fa-react"></i> React.js</li>
+                <li><i class="fab fa-node-js"></i> Node.js</li>
+            </ul>
+        </div>
+
+        <!-- database -->
+        <div class="tab-pane fade" id="skills3" role="tabpanel" aria-labelledby="tab3">
+            <ul>
+                <li><i class="fas fa-database"></i> SQL</li>
+                <li><i class="fas fa-database"></i> MySQL</li>
+                <li><i class="fas fa-database"></i> PostgreSQL</li>
+                <li><i class="fas fa-database"></i> MongoDB</li>
+                <li><i class="fas fa-database"></i> Redis</li>
+            </ul>
+        </div>
+
+        <!-- design -->
+        <div class="tab-pane fade" id="skills4" role="tabpanel" aria-labelledby="tab4">
+            <ul>
+                <li><i class="fab fa-adobe"></i> Adobe Photoshop</li>
+                <li><i class="fab fa-adobe"></i> Adobe Illustrator</li>
+                <li><i class="fab fa-figma"></i> Figma</li>
+                <li><i class="fab fa-sketch"></i> Sketch</li>
+                <li><i class="fab fa-invision"></i> InVision</li>
+            </ul>
+        </div>
+
+        <!-- tools & frameworks -->
+        <div class="tab-pane fade" id="skills5" role="tabpanel" aria-labelledby="tab5">
+            <ul>
+                <li><i class="fab fa-git"></i> Git</li>
+                <li><i class="fab fa-docker"></i> Docker</li>
+                <li><i class="fas fa-cogs"></i> Webpack</li>
+                <li><i class="fas fa-robot"></i> Jest</li>
+                <li><i class="fas fa-cloud"></i> Terraform</li>
+            </ul>
+        </div>
+
+        <!-- soft skills -->
+        <div class="tab-pane fade" id="skills6" role="tabpanel" aria-labelledby="tab6">
+            <ul>
+                <li><i class="fas fa-users"></i> Leadership</li>
+                <li><i class="fas fa-users"></i> Teamwork</li>
+                <li><i class="fas fa-lightbulb"></i> Problem Solving</li>
+                <li><i class="fas fa-comment-dots"></i> Communication</li>
+                <li><i class="fas fa-clock"></i> Time Management</li>
+            </ul>
+        </div>
+    </div>
+</section>
+
+        <section id="projects" class="vh-100 d-flex flex-column justify-content-center align-items-center">
+            <h1>Projects</h1>
+            <p>Examples of my work.</p>
+        </section>
+
+        <!-- contact -->
+        <section id="contact" class="vh-100 d-flex flex-column justify-content-center align-items-center">
+            <h1>Contact Me</h1>
+            <p>Get in touch through email or social links!</p>
+        </section>
+    </main>
+
+    <script>
+        window.onload = function() {
+    // page loads at the "About Me" section by default
+    if (window.location.hash === "") {
+        window.location.hash = "#about"; // scrolls to 'About' section
+    }
+
+    // force scroll to 'About' on page load
+    document.querySelector('#about').scrollIntoView({ behavior: 'smooth' });
+
+    //  scrollSpy after the page load
+    new bootstrap.ScrollSpy(document.getElementById('scrollspyMain'), {
+        target: '.sidebar',
+        offset: 0
+    });
+};
+
+document.addEventListener("scroll", function () {
+    const navbar = document.querySelector(".navbar");
+    if (window.scrollY > 50) {
+        navbar.classList.add("scrolled");
+    } else {
+        navbar.classList.remove("scrolled");
+    }
+});
+
+// show the relevant year based on dropdown selection
+function showYear(year) {
+        
+        const yearContents = document.querySelectorAll('.year-content');
+        yearContents.forEach(content => content.style.display = 'none');
+        
+        // show selected year
+        const selectedYear = document.getElementById(`year-${year}`);
+        selectedYear.style.display = 'block';
+        
+        // stops page scrolling
+        event.preventDefault();
+    }
+window.initMap = function() {
+    // initialize all maps here
+    initMaps();
+};
+function initMaps() {
+    const tudLocation = { lat: 53.2864, lng: -6.3733 };
+    const ncadLocation = { lat: 53.3448, lng: -6.2796 };
+    const stratfordLocation = { lat: 53.3125, lng: -6.2824 };
+
+    let map1, map2, map3;
+
+    document.getElementById('modal1').addEventListener('shown.bs.modal', function () {
+        if (!map1) {
+            map1 = new google.maps.Map(document.getElementById("map1"), {
+                zoom: 15,
+                center: tudLocation,
+            });
+            new google.maps.Marker({
+                position: tudLocation,
+                map: map1,
+                title: "TU Dublin",
+            });
+        }
+    });
+
+    document.getElementById('modal2').addEventListener('shown.bs.modal', function () {
+        if (!map2) {
+            map2 = new google.maps.Map(document.getElementById("map2"), {
+                zoom: 15,
+                center: ncadLocation,
+            });
+            new google.maps.Marker({
+                position: ncadLocation,
+                map: map2,
+                title: "NCAD",
+            });
+        }
+    });
+
+    document.getElementById('modal3').addEventListener('shown.bs.modal', function () {
+        if (!map3) {
+            map3 = new google.maps.Map(document.getElementById("map3"), {
+                zoom: 15,
+                center: stratfordLocation,
+            });
+            new google.maps.Marker({
+                position: stratfordLocation,
+                map: map3,
+                title: "Stratford College",
+            });
+        }
+    });
+}
+function searchPage(event) {
+        event.preventDefault(); 
+        const query = document.getElementById('searchInput').value.toLowerCase();
+        const content = document.body.innerText.toLowerCase(); 
+
+        if (content.includes(query)) {
+            highlightText(query);
+        } else {
+            alert('No results found');
+        }
+    }
+
+    function highlightText(query) {
+        const previousHighlights = document.querySelectorAll('.highlight');
+        previousHighlights.forEach(highlight => highlight.classList.remove('highlight'));
+
+        const bodyText = document.body.innerHTML;
+        const regex = new RegExp(query, 'gi');
+        const newContent = bodyText.replace(regex, (match) => {
+            return `<span class="highlight">${match}</span>`;
+        });
+        document.body.innerHTML = newContent; 
+        
+        const firstHighlight = document.querySelector('.highlight');
+        if (firstHighlight) {
+            firstHighlight.scrollIntoView({ behavior: 'smooth', block: 'center' });
+        }
+    }
+    </script>
+    
+</body>
+</html>
