@@ -282,7 +282,14 @@ section {
 /* Adjusting the Employment History section */
 #employment {
     margin-top: 50px; /* Ensures some space between grades and employment */
+    min-height: 100vh; /* Ensures the section is at least 100% of the viewport height */
+    overflow: hidden; /* Prevents any content from overflowing */
+    position: relative;
 }
+#employment .container {
+    padding-top: 40px; /* Adjust this value as needed */
+}
+
 .timeline {
     background: #f8f9fa;
     padding: 2rem 0;
@@ -293,6 +300,9 @@ section {
     position: relative;
     display: flex;
     flex-direction: column;
+    padding: 20px;
+    width: 100%;
+    box-sizing: border-box;
   }
   
   .timeline-entry {
@@ -383,4 +393,36 @@ section {
   .highlight {
     background-color: yellow;
     color: black;
+}
+ul {
+    list-style-type: none;
+    padding-left: 0; /* Remove any padding on the left */
+}
+#aboutMe {
+    background-color: #f8f9fa;
+}
+
+#aboutMe h2 {
+    font-size: 2.5rem;
+    font-weight: bold;
+    color: #333;
+}
+
+#aboutMe p {
+    font-size: 1.1rem;
+    color: #555;
+}
+
+#aboutMe ul {
+    font-size: 1rem;
+    color: #333;
+}
+
+#aboutMe ul li {
+    margin: 10px 0;
+}
+
+.fas.fa-check-circle {
+    color: #28a745;
+    margin-right: 10px;
 }
