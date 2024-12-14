@@ -8,19 +8,18 @@ body {
 
 /* Card styling for the #about section */
 #about .card {
-    background-color: rgba(255, 255, 255, 0.8); /* Light background with slight transparency */
-    backdrop-filter: blur(10px); /* Optional: Adds a subtle blur effect for contrast */
-    border-radius: 15px; /* Smooth rounded corners */
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Adds depth to the card */
-    overflow: hidden; /* Ensures the image doesn't overflow the card boundaries */
+    background-color: rgba(255, 255, 255, 0.8); 
+    backdrop-filter: blur(10px); 
+    border-radius: 15px; 
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    overflow: hidden; 
 }
-
 /* Image styling inside the card */
 #about .card-img-top {
     object-fit: cover;
     width: 100%;
-    height: 60vh; /* Adjusts the height of the image */
-    border-top-left-radius: 15px; /* Rounded corners match the card */
+    height: 60vh; 
+    border-top-left-radius: 15px; 
     border-top-right-radius: 15px;
 }
 
@@ -36,15 +35,34 @@ body {
     color: #333;
 }
 
-
 /* Sidebar styling for mobile responsiveness */
-@media(max-width: 991px) {
+@media (max-width: 991px) {
     .sidebar {
+        position: fixed; 
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0; 
+        width: 250px;
         color: black;
-        background-color: rgba(255, 255, 255, 0.25);
+        background-color: rgba(255, 255, 255, 0.25); 
         backdrop-filter: blur(15px);
+        z-index: 1050;
+        
+        overflow-y: auto; 
+    }
+
+    .sidebar .btn-close {
+        position: absolute;
+        top: 10px;
+        right: 10px;
+        background: transparent;
+        color: #fff;
+        border: none;
+        font-size: 24px;
     }
 }
+
 @media (max-width: 767px) {
     .timeline-container {
         display: flex;
@@ -52,10 +70,10 @@ body {
         align-items: center;
     }
     .timeline-entry.left, .timeline-entry.right {
-        width: 100%; /* Make the timeline entries full-width */
+        width: 100%; 
     }
     .timeline-date {
-        margin-bottom: 10px; /* Adjust for better spacing */
+        margin-bottom: 10px; 
     }
 }
 /* Button styling */
@@ -76,67 +94,64 @@ body {
 section {
     background-color: transparent;
     color: black;
-    padding: 40px 20px; /* Add padding to prevent content from touching edges */
+    padding: 40px 20px; 
     text-align: center;
-    min-height: 100vh; /* Ensures section is at least full viewport height */
+    min-height: 100vh; 
     display: flex;
-    flex-direction: column; /* Allows proper stacking of content */
+    flex-direction: column; 
     justify-content: center;
     align-items: center;
-    box-sizing: border-box; /* Includes padding in height calculations */
+    box-sizing: border-box; 
 }
 
 #education {
-    padding-top: 80px; /* Add extra spacing to ensure no overlap */
+    padding-top: 80px; 
     padding-bottom: 80px;
 }
 
-/* Reduce the card size specifically for the education section */
 #education .card {
-    width: 80%; /* Adjusts the card width, you can change the percentage */
-    height: auto; /* Keeps the height flexible */
-    margin: 20px auto; /* Centers the card and adds space around */
+    width: 80%; 
+    height: auto; 
+    margin: 20px auto; 
 }
 
-/* If you want to reduce the image size as well inside the education section */
 #education .card-img-top {
-    height: 200px; /* Adjust the height of the image */
+    height: 200px; 
     object-fit: cover;
-    border-radius: 8px; /* Ensures rounded corners for the image */
+    border-radius: 8px; 
 }
 
-/* Optional: Adjust card body text size if needed */
+
 #education .card-body h1 {
-    font-size: 2rem; /* Adjust title size */
+    font-size: 2rem; 
 }
 
 #education .card-body h2 {
-    font-size: 1.5rem; /* Adjust subtitle size */
+    font-size: 1.5rem;
 }
 
 .card {
-    display: flex; /* Ensures consistent alignment within the card */
-    flex-direction: column; /* Stack elements vertically */
-    justify-content: flex-start; /* Align content to the top */
+    display: flex; 
+    flex-direction: column; 
+    justify-content: flex-start; 
 }
 
 .card-img-top {
-    object-fit: cover; /* Ensures images fill the designated area proportionally */
-    object-position: center; /* Centers the image */
-    width: 100%; /* Makes the image fill the card width */
-    height: 200px; /* Fixes the height of all images for uniformity */
-    border-radius: 8px; /* Rounds the corners of the image */
-    padding: 0; /* Ensures no unintended spacing around the image */
-    display: block; /* Consistent rendering across browsers */
+    object-fit: cover; 
+    object-position: center;
+    width: 100%; 
+    height: 200px; 
+    border-radius: 8px; 
+    padding: 0; 
+    display: block; 
 }
 
 .card img {
-    margin: 0; /* Removes any margins around the image */
-    border-radius: 8px; /* Keeps the rounded corners consistent */
-    width: 100%; /* Ensures images fit the card width */
-    height: auto; /* Preserves the aspect ratio */
+    margin: 0; 
+    border-radius: 8px;
+    width: 100%; 
+    height: auto; 
 }
-
 
 /* Custom styles for Navbar */
 .navbar .navbar-nav {
@@ -146,29 +161,28 @@ section {
     width: 100%;
 }
 .navbar {
-    background-color: rgba(242, 172, 172, 0.7); /* Light grey with 70% opacity */
-    backdrop-filter: blur(10px); /* Optional: Adds a subtle blur effect for better contrast */
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Optional: Adds a soft shadow for better visibility */
-    transition: background-color 0.3s ease-in-out; /* Smooth transition when scrolling or hovering */
+    background-color: rgba(242, 172, 172, 0.7); 
+    backdrop-filter: blur(10px); 
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); 
+    transition: background-color 0.3s ease-in-out; 
 }
 
 /* Navbar background change on scroll */
 .navbar.scrolled {
-    background-color: rgba(211, 211, 211, 0.9); /* Slightly less transparent when scrolling */
+    background-color: rgba(211, 211, 211, 0.9); 
 }
 
 .navbar .contact-btn {
     position: absolute;
     right: 20px;
 }
-/* Active state styles */
+
 .navbar-nav .nav-link.active {
-    font-size: 1.2rem; /* Makes the text larger */
-    font-weight: bold; /* Optional: Makes the text bold */
-    color: black; /* Bright color for the active state */
+    font-size: 1.2rem; 
+    font-weight: bold; 
+    color: black; 
 }
 
-/* Optional: Transition effect for smooth resizing */
 .navbar-nav .nav-link {
     transition: font-size 0.3s ease, color 0.3s ease;
 }
@@ -177,7 +191,7 @@ section {
 /* Sidebar - Contact Me button centered at the bottom */
 .sidebar .btn-custom {
     margin-top: auto;
-    white-space: nowrap; /* Prevents the text from wrapping to a new line */
+    white-space: nowrap; 
 }
 
 /* Button styling inside the card */
@@ -189,26 +203,24 @@ section {
     border-radius: 5px;
     padding: 8px 16px;
     transition: background-color 0.3s ease, color 0.3s ease;
-    outline: none; /* Remove outline */
-    box-shadow: none !important; /* Remove any shadow */
+    outline: none; 
+    box-shadow: none !important;
 }
 
 /* Hover effect for the button */
 .card-button:hover {
-    background-color: hotpink; /* Hover background */
-    color: white; /* Hover text color */
+    background-color: hotpink; 
+    color: white; 
 }
 
-/* Remove blue ring around button when it's focused or active */
 .card-button:focus, .card-button:active {
-    outline: none; /* Remove outline */
-    box-shadow: none !important; /* Remove blue shadow */
+    outline: none; 
+    box-shadow: none !important;
 }
 
-/* For buttons with focus-visible (browsers that use it for focus styles) */
 .card-button:focus-visible {
-    outline: none !important; /* Remove focus outline */
-    box-shadow: none !important; /* Remove the focus shadow */
+    outline: none !important; 
+    box-shadow: none !important; 
 }
 
 /* Card hover effect */
@@ -224,31 +236,30 @@ section {
 .card-body {
     display: flex;
     flex-direction: column;
-    justify-content: center; /* Vertically centers content */
-    align-items: center; /* Horizontally centers content */
-    text-align: center; /* Centers text inside the card */
+    justify-content: center; 
+    align-items: center; 
+    text-align: center; 
 }
 
 /* Card image styling */
 .card-img-top {
     object-fit: cover;
     width: 100%;
-    height: auto; /* Maintains aspect ratio */
+    height: auto; 
 }
 
-/* Ensure the GPA section has spacing at the bottom */
 #grades {
-    margin-bottom: 50px; /* Adjust as necessary */
+    margin-bottom: 50px; 
 }
-/* Adjusting the Employment History section */
+
 #employment {
-    margin-top: 50px; /* Ensures some space between grades and employment */
-    min-height: 100vh; /* Ensures the section is at least 100% of the viewport height */
-    overflow: hidden; /* Prevents any content from overflowing */
+    margin-top: 50px;
+    min-height: 100vh; 
+    overflow: hidden; 
     position: relative;
 }
 #employment .container {
-    padding-top: 40px; /* Adjust this value as needed */
+    padding-top: 40px; 
 }
 
 .timeline {
@@ -286,7 +297,7 @@ section {
   }
   
   .timeline-entry.left .timeline-content {
-    text-align: left; /* Align the text inside the content box to the left */
+    text-align: left;
   }
   
   .timeline-content {
@@ -357,7 +368,7 @@ section {
 }
 ul {
     list-style-type: none;
-    padding-left: 0; /* Remove any padding on the left */
+    padding-left: 0;
 }
 #aboutMe {
     background-color: #f8f9fa;
@@ -404,7 +415,7 @@ ul {
 }
 
 .project-card:hover .card-inner {
-    transform: rotateY(180deg); /* flip the card on hover */
+    transform: rotateY(180deg); 
 }
 
 /* Front of the card */
